@@ -1,0 +1,44 @@
+{
+  "name": "create-leo",
+  "version": "0.1.1",
+  "description": "A lightweight project generator for production-oriented Node.js, FastAPI, database and RAG backends.",
+  "type": "module",
+  "bin": {
+    "create-leo": "dist/index.js",
+    "leo": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "versions.json"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --target node22 --clean",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "resolve-versions": "node scripts/resolve-versions.mjs",
+    "prepublishOnly": "npm run resolve-versions && npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "npm@11",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

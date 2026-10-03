@@ -1,0 +1,8 @@
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic-settings==2.15.0
+python-multipart==0.0.32
+pypdf==6.19.0
+fastembed==0.8.1
+qdrant-client==1.19.1
+openai==3.24.0
